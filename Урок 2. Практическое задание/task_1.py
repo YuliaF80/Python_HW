@@ -15,3 +15,10 @@
 <class 'bool'>
 <class 'NoneType'>
 """
+
+my_list = [23, None, 3.14, 'Hello', False]
+print(type(my_list[0]))
+print(type(my_list[1]))
+print(type(my_list[2]))
+print(type(my_list[3]))
+print(type(my_list[4]))
