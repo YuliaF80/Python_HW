@@ -7,3 +7,16 @@
 Иванов 23543.12
 Петров 13749.32
 """
+with open('text_4.txt', 'w+', encoding='utf-8') as my_file:
+    # запишем данные в файл
+    print('Иванов 23543.12\nПетров 13749.32\nСидоров 46239.39\nЧупров 21980.00\nФедотова 12983.23\n'
+          'Третьякова 16254.12\nКанев 34210.32\nЧупрова 40123.32\nИльина 19032.12\nКислякова 9023.10', file=my_file)
+    # перемещаем курсор на начало
+    my_file.seek(0)
+    # из строк сделаем словарь
+    dict_empl = {line.split()[0]: float(line.split()[1]) for line in my_file}
+    # print(dict_empl)
+    print(f'Следующие сотрудники имеют оклад меньше 20 тыс.:\n'
+          f'{", ".join([el[0] for el in dict_empl.items() if el[1] < 20000])}\n'
+          f'Средняя величина дохода сотрудников: '
+          f'{round(sum([el[1] for el in dict_empl.items()]) / len(dict_empl), 2)}')
