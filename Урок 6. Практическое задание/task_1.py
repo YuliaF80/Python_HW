@@ -15,3 +15,19 @@
 
 Проверить работу примера, создав экземпляр и вызвав описанный метод.
 """
+from time import sleep
+class TrafficLight:
+    # атрибут цвет, поигралась со цветным текстом
+    red_col = "\033[31m {}" .format("красный")
+    yellow_col = "\033[33m {}" .format("желтый")
+    green_col = "\033[32m {}" .format("зеленый")
+    __color = {red_col: 7, yellow_col: 2, green_col: 9}
+    def running(self):
+        for key_color, wait in TrafficLight.__color.items():
+            print(f'{key_color} цвет - {wait} секунд')
+            sleep(wait)
+
+
+t = TrafficLight()
+t.running()
+

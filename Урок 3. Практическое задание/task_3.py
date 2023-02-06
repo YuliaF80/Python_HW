@@ -5,3 +5,17 @@
 1) используя функцию sort()
 2) без функции sort()
 """
+# первый вариант
+def my_func(num1, num2, num3):
+    list = [num1, num2, num3]
+    list.sort()
+    return list[1] + list[2]
+print('Сумма наибольших двух аргументов равна: ',
+      my_func(int(input('Введите первое число: ')), int(input('Введите второе число: ')), int(input('Введите третье число: '))))
+
+# второй вариант
+def my_func(num1, num2, num3):
+    return num1 + num2 + num3 - min(num1, num2, num3)
+print('Сумма наибольших двух аргументов равна: ',
+      my_func(int(input('Введите первое число: ')), int(input('Введите второе число: ')), int(input('Введите третье число: '))))
+

@@ -3,3 +3,14 @@
 записать в него построчно данные, вводимые пользователем.
 Об окончании ввода данных свидетельствует пустая строка.
 """
+name_f = input('Введите имя текстового файла (без расширения): ')
+file_1 = open(f'{name_f}.txt', 'w+', encoding='utf-8')
+while True:
+    text = input('введите текст >> ')
+    if text == '':
+        break
+    print(text, file=file_1)
+file_1.seek(0)
+print(f'В файл {name_f}.txt записан следующий текст:\n{file_1.read()}')
+file_1.close()
+
